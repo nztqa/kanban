@@ -21,3 +21,5 @@ fourseven:scss
 universe:i18n
 aldeed:collection2-core
 mdg:validated-method
+practicalmeteor:mocha
+dburles:factory
