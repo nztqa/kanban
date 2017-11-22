@@ -5,16 +5,16 @@ import { Factory } from 'meteor/dburles:factory';
 const Boards = new Mongo.Collection('boards');
 export default Boards;
 
-Boards.allow({
-  insert: () => false,
-  update: () => false,
-  remode: () => false,
+Boards.deny({
+  insert() { return true; },
+  update() { return true; },
+  remove() { return true; },
 });
 
-Boards.deny({
-  insert: () => true,
-  update: () => true,
-  remode: () => true,
+Boards.allow({
+  insert() { return false; },
+  update() { return false; },
+  remove() { return false; },
 });
 
 const Schema = {};

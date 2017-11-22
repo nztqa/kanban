@@ -2,7 +2,28 @@ import SimpleSchema from 'simpl-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import Lists from './lists.js';
 
-export const upsertList = new ValidatedMethod({
+export const insert = new ValidatedMethod({
+  name: 'lists.insert',
+  validate: new SimpleSchema({
+    title: { type: String },
+  }).validator(),
+  run({ title }) {
+    return Lists.insert({ title });
+  },
+});
+
+export const updateTitle = new ValidatedMethod({
+  name: 'lists.updateTitle',
+  validate: new SimpleSchema({
+    _id: { type: String },
+    title: { type: String },
+  }).validator(),
+  run({ _id, title }) {
+    return Lists.update({ _id }, { $set: { title } });
+  },
+});
+
+export const upsert = new ValidatedMethod({
   name: 'lists.upsert',
   validate: new SimpleSchema({
     _id: { type: String, optional: true },
@@ -13,7 +34,7 @@ export const upsertList = new ValidatedMethod({
   },
 });
 
-export const removeList = new ValidatedMethod({
+export const remove = new ValidatedMethod({
   name: 'lists.remove',
   validate: new SimpleSchema({
     _id: { type: String },

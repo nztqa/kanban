@@ -5,16 +5,16 @@ import { Factory } from 'meteor/dburles:factory';
 const Cards = new Mongo.Collection('cards');
 export default Cards;
 
-Cards.allow({
-  insert: () => false,
-  update: () => false,
-  remode: () => false,
+Cards.deny({
+  insert() { return true; },
+  update() { return true; },
+  remove() { return true; },
 });
 
-Cards.deny({
-  insert: () => true,
-  update: () => true,
-  remode: () => true,
+Cards.allow({
+  insert() { return false; },
+  update() { return false; },
+  remove() { return false; },
 });
 
 const Schema = {};

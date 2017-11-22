@@ -5,16 +5,16 @@ import { Factory } from 'meteor/dburles:factory';
 const Lists = new Mongo.Collection('lists');
 export default Lists;
 
-Lists.allow({
-  insert: () => false,
-  update: () => false,
-  remode: () => false,
+Lists.deny({
+  insert() { return true; },
+  update() { return true; },
+  remove() { return true; },
 });
 
-Lists.deny({
-  insert: () => true,
-  update: () => true,
-  remode: () => true,
+Lists.allow({
+  insert() { return false; },
+  update() { return false; },
+  remove() { return false; },
 });
 
 const Schema = {};
