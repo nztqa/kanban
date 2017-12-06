@@ -1,19 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-    <p>Welcome to Meteor!</p>
-  </div>
-);
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-    <p>Kanban boards</p>
-  </div>
-);
+import AppContainer from '../../ui/containers/AppContainer.js';
 
 const NotFound = () => (
   <div>
@@ -24,18 +11,10 @@ const NotFound = () => (
 
 const renderRoutes = () => (
   <BrowserRouter>
-    <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-      </ul>
-      <hr />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route component={NotFound} />
-      </Switch>
-    </div>
+    <Switch>
+      <Route exact path="/" component={AppContainer} />
+      <Route component={NotFound} />
+    </Switch>
   </BrowserRouter>
 );
 
