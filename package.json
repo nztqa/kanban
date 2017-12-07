@@ -13,7 +13,11 @@
       "react/forbid-prop-types": "off",
       "react/require-default-props": "off",
       "react/no-unused-state": "off",
-      "no-underscore-dangle": "off"
+      "no-underscore-dangle": "off",
+      "jsx-a11y/anchor-is-valid": [ "error", {
+        "components": [ "Link" ],
+        "specialLink": [ "to" ]
+      }]
     }
   },
   "dependencies": {
