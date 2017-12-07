@@ -13,7 +13,7 @@
       "react/forbid-prop-types": "off",
       "react/require-default-props": "off",
       "react/no-unused-state": "off",
-      "react/no-underscore-dangle": "off"
+      "no-underscore-dangle": "off"
     }
   },
   "dependencies": {
