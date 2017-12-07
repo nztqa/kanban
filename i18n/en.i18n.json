@@ -3,5 +3,10 @@
     "loading": {
       "loading": "Now Loading..."
     }
+  },
+  "pages": {
+    "notFoundPage": {
+      "pageNotFound": "Not Found"
+    }
   }
 }
