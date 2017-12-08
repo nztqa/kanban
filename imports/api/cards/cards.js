@@ -22,6 +22,9 @@ Schema.Cards = new SimpleSchema({
   title: {
     type: String,
   },
+  listId: {
+    type: String,
+  },
   createdAt: {
     type: Date,
     autoValue() { // eslint-disable-line consistent-return

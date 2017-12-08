@@ -7,6 +7,9 @@
   "pages": {
     "notFoundPage": {
       "pageNotFound": "Not Found"
+    },
+    "listPage": {
+        "noCards": "No cards here"
     }
   }
 }

@@ -22,6 +22,9 @@ Schema.Lists = new SimpleSchema({
   title: {
     type: String,
   },
+  boardId: {
+    type: String,
+  },
   createdAt: {
     type: Date,
     autoValue() { // eslint-disable-line consistent-return

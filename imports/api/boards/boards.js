@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Factory } from 'meteor/dburles:factory';
+import Lists from '../lists/lists.js';
 
 const Boards = new Mongo.Collection('boards');
 export default Boards;
@@ -46,4 +47,10 @@ Factory.define('board', Boards, {
   title: () => 'Factory Title',
   createdAt: () => new Date(),
   updatedAt: () => new Date(),
+});
+
+Boards.helpers({
+  lists() {
+    return Lists.find({ boardId: this._id }, { sort: { createdAt: -1 } });
+  },
 });
